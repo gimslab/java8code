@@ -1,17 +1,19 @@
-import java.util.function.*;
-import javafx.application.*;
-import javafx.scene.*;
-import javafx.scene.image.*;
-import javafx.scene.layout.*;
-import javafx.scene.paint.*;
-import javafx.stage.*;
+import java.util.function.UnaryOperator;
+
+import javafx.scene.Scene;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.image.WritableImage;
+import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
 @FunctionalInterface
 interface ColorTransformer {
    Color apply(int x, int y, Color colorAtXY);  
 }
 
-public class ImageDemo extends Application {
+public class ImageDemo extends javafx.application.Application {
    public static Image transform(Image in, UnaryOperator<Color> f) {
       int width = (int) in.getWidth();
       int height = (int) in.getHeight();
@@ -45,5 +47,10 @@ public class ImageDemo extends Application {
       
       stage.setScene(new Scene(new HBox(new ImageView(image), new ImageView(brightenedImage), new ImageView(image2))));
       stage.show();
+   }
+
+   public static void main(final String[] arguments)
+   {
+      javafx.application.Application.launch(arguments);
    }
 }
