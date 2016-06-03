@@ -4,6 +4,8 @@ import java.nio.file.*;
 import java.util.*;
 import java.util.stream.*;
 
+import ch2.sec02.Test;
+
 public class Test {
    public static void main(String[] args) throws IOException {
       String contents = new String(Files.readAllBytes(

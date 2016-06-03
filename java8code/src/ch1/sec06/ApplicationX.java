@@ -1,7 +1,7 @@
 import java.nio.file.*;
 import java.util.*;
 
-public class Application {
+public class ApplicationX {
    public static void main(String[] args) {
 
       // Path first = Paths.get("/usr/bin");
@@ -10,7 +10,7 @@ public class Application {
 
       Comparator<String> comp = 
          (first, second) -> Integer.compare(first.length(), second.length());
-      Application app = new Application();
+      ApplicationX app = new ApplicationX();
       app.doWork();
    }
 
