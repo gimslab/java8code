@@ -4,9 +4,7 @@ import java.nio.file.*;
 import java.util.*;
 import java.util.stream.*;
 
-import ch2.sec02.Test;
-
-public class Test {
+public class TestCh2Sec07 {
    public static void main(String[] args) throws IOException {
       String contents = new String(Files.readAllBytes(
             Paths.get("../alice.txt")), StandardCharsets.UTF_8);
@@ -38,10 +36,10 @@ public class Test {
       }
 
       
-      System.out.println(inverse(4.0).flatMap(Test::squareRoot));
-      System.out.println(inverse(-1.0).flatMap(Test::squareRoot));
-      System.out.println(inverse(0.0).flatMap(Test::squareRoot));
-      System.out.println(Optional.of(-4.0).flatMap(Test::inverse).flatMap(Test::squareRoot));
+      System.out.println(inverse(4.0).flatMap(TestCh2Sec07::squareRoot));
+      System.out.println(inverse(-1.0).flatMap(TestCh2Sec07::squareRoot));
+      System.out.println(inverse(0.0).flatMap(TestCh2Sec07::squareRoot));
+      System.out.println(Optional.of(-4.0).flatMap(TestCh2Sec07::inverse).flatMap(TestCh2Sec07::squareRoot));
    }
 
    public static Optional<Double> inverse(Double x) {

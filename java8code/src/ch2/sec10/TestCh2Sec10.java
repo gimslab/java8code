@@ -4,11 +4,11 @@ import java.util.*;
 import java.util.function.*;
 import java.util.stream.*;
 
-class Person {
+class PersonCh2Sec10 {
    private int id;
    private String name;
 
-   public Person(int id, String name) { this.id = id; this.name = name; }
+   public PersonCh2Sec10(int id, String name) { this.id = id; this.name = name; }
    public int getId() { return id; }
    public String getName() { return name; }
    public String toString() { return getClass().getName() + 
@@ -16,24 +16,24 @@ class Person {
    }
 }
 
-public class Test {
-   public static Stream<Person> people() {
+public class TestCh2Sec10 {
+   public static Stream<PersonCh2Sec10> people() {
       return Stream.of(
-         new Person(1001, "Peter"),
-         new Person(1002, "Paul"),
-         new Person(1003, "Mary"));
+         new PersonCh2Sec10(1001, "Peter"),
+         new PersonCh2Sec10(1002, "Paul"),
+         new PersonCh2Sec10(1003, "Mary"));
    } 
 
    public static void main(String[] args) throws IOException {
-      Map<Integer, String> idToName = people().collect(Collectors.toMap(Person::getId, Person::getName));
+      Map<Integer, String> idToName = people().collect(Collectors.toMap(PersonCh2Sec10::getId, PersonCh2Sec10::getName));
       System.out.println("idToName: " + idToName);
 
-      Map<Integer, Person> idToPerson = people().collect(Collectors.toMap(Person::getId, Function.identity()));
+      Map<Integer, PersonCh2Sec10> idToPerson = people().collect(Collectors.toMap(PersonCh2Sec10::getId, Function.identity()));
       System.out.println("idToPerson: " + idToPerson.getClass().getName() + idToPerson);
 
       idToPerson = people().collect(
          Collectors.toMap(
-            Person::getId,
+        		 PersonCh2Sec10::getId,
             Function.identity(),
             (existingValue, newValue) -> { throw new IllegalStateException(); },
             TreeMap::new));
