@@ -62,6 +62,7 @@
 	<classpathentry kind="src" path="java8code/src/ch9/sec02"/>
 	<classpathentry kind="src" path="java8code/src/ch9/sec03"/>
 	<classpathentry kind="src" path="java8code/src/ch9/sec05"/>
+	<classpathentry kind="src" path="java8code/src/ch3/sec09"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_92"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
