@@ -1,3 +1,4 @@
+package ch2.sec03;
 import java.io.*;
 import java.nio.charset.*;
 import java.nio.file.*;
@@ -25,6 +26,7 @@ public class Test {
    }
 
    public static void main(String[] args) throws IOException {
+	   System.out.println(new File("../alice.txt").getCanonicalPath());
       String contents = new String(Files.readAllBytes(
             Paths.get("../alice.txt")), StandardCharsets.UTF_8);
       List<String> wordList = Arrays.asList(contents.split("[\\P{L}]+"));
