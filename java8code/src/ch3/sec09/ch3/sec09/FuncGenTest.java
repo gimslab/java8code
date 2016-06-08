@@ -22,6 +22,17 @@ public class FuncGenTest {
 			}
 		});
 
+		Stream.of(new Employee("a"), new Employee("b")).forEach(new Consumer<SuperPerson>() {
+			@Override
+			public void accept(SuperPerson t) {
+			}
+		});
+		Stream.of(new Employee("a"), new Employee("b")).forEach(new Consumer<Person>() {
+			@Override
+			public void accept(Person t) {
+			}
+		});
+
 		Stream<String> filtered1 = Stream.of("a", "bb", "ccc").filter(new Predicate<String>() {
 			@Override
 			public boolean test(String t) {
@@ -36,14 +47,10 @@ public class FuncGenTest {
 			}
 		});
 
-		Stream.of(new Employee("a"), new Employee("b")).forEach(new Consumer<Employee>() {
+		Stream<Employee> filtered3 = Stream.of(new Employee("a"), new Employee("b")).filter(new Predicate<Person>() {
 			@Override
-			public void accept(Employee t) {
-			}
-		});
-		Stream.of(new Employee("a"), new Employee("b")).forEach(new Consumer<Person>() {
-			@Override
-			public void accept(Person t) {
+			public boolean test(Person t) {
+				return true;
 			}
 		});
 	}

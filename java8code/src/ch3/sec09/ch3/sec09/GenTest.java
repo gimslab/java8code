@@ -5,15 +5,21 @@ import java.util.List;
 
 public class GenTest {
 	public static void main(String[] args) {
-		//		List<Person> tenants = staff;
-		List<Employee> staff = makeEmployees();
-		List<Person> persons = makePersons();
+		List<SuperPerson> superPersons = new ArrayList<>();
+		List<Person> persons = new ArrayList<>();
+		List<Employee> list = new ArrayList<>();
+		List<Employee> employees = list;
+		List<SubEmployee> subEmployees = new ArrayList<>();
 
-		readFrom(staff);
-		readFrom(persons);
+//		readFrom(superPersons);
+//		readFrom(persons);
+//		readFrom(employees);
+//		readFrom(subEmployees);
 
-		writeTo(staff);
-		writeTo(persons);
+//		writeTo(superPersons);
+//		writeTo(persons);
+//		writeTo(employees);
+//		writeTo(subEmployees);
 	}
 
 	private static void readFrom(List<? extends Person> list) {
@@ -40,15 +46,6 @@ public class GenTest {
 //		list.add(new Person("bok"));
 //		list.add(new Employee("bok"));
 //		list.add(new SubEmployee("hi"));
-	}
-
-	private static List<Employee> makeEmployees() {
-		List<Employee> list = new ArrayList<>();
-		return list;
-	}
-
-	private static List<Person> makePersons() {
-		return null;
 	}
 }
 
